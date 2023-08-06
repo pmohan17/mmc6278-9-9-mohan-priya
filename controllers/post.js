@@ -12,7 +12,7 @@ async function create(req, res, next) {
 }
 catch (err) {
   console.log(err.message)
-  return res.status(500).send(err.message)
+  return res.status(500).send("issue" + err.message)
 }}
 
 async function get(req, res) {
@@ -47,7 +47,8 @@ const showPost = await Post
     }}
 
     module.exports = {
-      getAll,
-      get,
       create,
-  }
+      getAll,
+      get
+      
+    }

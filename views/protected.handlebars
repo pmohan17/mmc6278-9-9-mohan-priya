@@ -1,7 +1,7 @@
 {{> header}}
 <main>
   <h1>What did you accomplish today?</h1>
-  <form class="create-post" action="/api/protected" method="POST">
+  <form class="create-post" action="/api/post" method="POST">
     <div> <label for="post-body">Share your achievement</label></div>
     <div> <textarea name="body" id="body" rows="4" required></textarea>
       {{#if post}}
@@ -11,8 +11,9 @@
    <div> <button class="btn">Submit</button></div>
   </form>
   <article>
-    <h1>{{post.body}}</h1>
-
+    
+    <p class="motivation">Need some motivation today? Click the button.</p>
+  <div> <button class="btn">Inspirational Quotes</button></div>
     <p class="created-at"><em>Posted: {{post.createdAt}}</em></p>
     <p class="homepage-link">
       <a href="/">Homepage</a>

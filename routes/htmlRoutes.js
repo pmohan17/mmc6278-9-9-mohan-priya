@@ -29,5 +29,3 @@ router.get("/post/:id", controllers.post.get);
 // get single post
 
 module.exports = router;
-
-module.exports = router;
