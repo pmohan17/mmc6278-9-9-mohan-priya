@@ -11,9 +11,10 @@
    <div> <button class="btn">Submit</button></div>
   </form>
   <article>
-    
+    <h1> {{{post.body}}} </h1>
     <p class="motivation">Need some motivation today? Click the button.</p>
-  <div> <button class="btn">Inspirational Quotes</button></div>
+  <div> <button class="btn" id="quoteBtn">Inspirational Quotes</button></div>
+  <div id="quoteSpace"></div>
     <p class="created-at"><em>Posted: {{post.createdAt}}</em></p>
     <p class="homepage-link">
       <a href="/">Homepage</a>
@@ -21,4 +22,21 @@
   </article>
 </main>
 <script>
+  const inspireBtn = document.getElementById('quoteBtn')
+  inspireBtn.onclick = function(e) {
+    fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+    var randomSelect = data[Math.floor(Math.random()*data.length)];
+    randomQuote = randomSelect.text
+    console.log(randomQuote)
+    var quoteBlock= document.createElement("h2");
+    document.getElementById("quoteSpace").innerHTML=randomQuote
+
+  });
+  }
+ 
 </script>
