@@ -19,6 +19,10 @@ router.get("/signup", async (req, res) => {
 router.get("/private", checkAuth, ({ session: { isLoggedIn } }, res) => {
   res.render("protected", { isLoggedIn });
 });
+router.get("/post", async (req, res) => {
+  if (req.session.isLoggedIn) return res.redirect("/");
+  res.render("login", { error: req.query.error });
+});
 
 
 // get all posts

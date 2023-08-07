@@ -1,21 +1,17 @@
 {{> header}}
 <main>
   <h1>What did you accomplish today?</h1>
-  <form class="create-post" action="/api/post" method="POST">
+  <form class="create-post" id="create-post" action="/api/post" method="POST">
     <div> <label for="post-body">Share your achievement</label></div>
-    <div> <textarea name="body" id="body" rows="4" required></textarea>
-      {{#if post}}
-        {{{post.body}}}
-      {{/if}}
+    <div> <textarea name="body" id="body-text" rows="4" required></textarea>
     </div>
    <div> <button class="btn">Submit</button></div>
   </form>
   <article>
-    <h1> {{{post.body}}} </h1>
+    {{post}}
     <p class="motivation">Need some motivation today? Click the button.</p>
   <div> <button class="btn" id="quoteBtn">Inspirational Quotes</button></div>
   <div id="quoteSpace"></div>
-    <p class="created-at"><em>Posted: {{post.createdAt}}</em></p>
     <p class="homepage-link">
       <a href="/">Homepage</a>
     </p>
@@ -38,5 +34,10 @@
 
   });
   }
- 
+   //const submitBtn = document.getElementById('create-post').onsubmit = function(e) {
+    //e.preventDefault()
+    //console.log(submitBtn)
+    //var pullText = (document.getElementById('body-text').value)
+    //console.log(pullText)
+ // }
 </script>
