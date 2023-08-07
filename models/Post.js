@@ -10,8 +10,8 @@ const PostSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  slug: {
-    type: String
-  }
 })
+
+
+
 module.exports = models.Post || model('Post', PostSchema)

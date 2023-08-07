@@ -24,10 +24,9 @@ router.get("/post", async (req, res) => {
   res.render("login", { error: req.query.error });
 });
 
-
 // get all posts
 // ?tag=tagId for posts by single tag
-router.get("/", controllers.post.getAll);
+router.get("/post", controllers.post.getAll);
 router.get("/post/:id", controllers.post.get);
 
 // get single post

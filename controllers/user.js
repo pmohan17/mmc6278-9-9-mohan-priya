@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Post } = require("../models");
 
 async function create(req, res) {
   try {
@@ -17,6 +17,11 @@ async function create(req, res) {
     console.log(err);
     return res.redirect(`/signup?error=${err.message}`);
   }
+}
+
+async function addPost(req, res, next) {
+ 
+  res.render('protected', {isLoggedIn: req.session.isLoggedIn})
 }
 
 module.exports = { create };
