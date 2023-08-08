@@ -9,8 +9,7 @@ async function create(req, res, next) {
     const post = await Post.create({body});
     console.log("Post created")
     console.log(post)
-    await post.save();
-    console.log("save function is working")
+    return res.render('protected', {post})
   return res.status(200).json(post)
       
 }
