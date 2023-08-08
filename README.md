@@ -7,12 +7,16 @@ Unfortunately, there were a few bugs in deploying this that time did not permit 
 
 ## Deployment
 - Clone this repository
+- Run npm start
 - Run locally in http://localhost:3000/
 - Visit your accomplishments page
 - This is also viewable in Github on https://mongo-project-db-8099bd66a799.herokuapp.com/
 
 ## Future Considerations
 Once I get this app working, I do believe I would use an app like this. I rarely find time to journal but find satisfaction in writing the highlights of my day.
+
+## API
+The API was taken from https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373
 
 ## The Web Page
 ![Screenshot 2023-08-07 230152](https://github.com/pmohan17/mmc6278-9-9-mohan-priya/assets/43380900/ea429f6f-4ef7-40af-b1ff-f8a8fbd7475e)
