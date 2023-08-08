@@ -6,10 +6,11 @@ async function create(req, res, next) {
     const {body} = req.body
     console.log("Create function is working")
     if (!body) return res.status(400).send('Please add text')
-    const post = await Post.create({body})
+    const post = await Post.create({body});
     console.log("Post created")
     console.log(post)
-    return res.render('protected', {post})
+    await post.save();
+    console.log("save function is working")
   return res.status(200).json(post)
       
 }
@@ -65,7 +66,6 @@ const showPost = await Post
       const postId = req.params.id
       const post = await Post.findByIdAndDelete(postId).lean()
       post.remove()
-      await user.save()
       res.status(200).send('Post deleted.')
       } catch(err) {
         res.status(500).send(err.message)

@@ -19,9 +19,4 @@ async function create(req, res) {
   }
 }
 
-async function addPost(req, res, next) {
- 
-  res.render('protected', {isLoggedIn: req.session.isLoggedIn})
-}
-
 module.exports = { create };

@@ -19,7 +19,7 @@ const { Post } = require ("../models");
 
 connection.once("open", async function () {
   // insert a sample user
-  //await User.create({ username: "banana", password: "meatloaf" });//
+  await User.create({ username: "banana", password: "meatloaf" });//
 
   const post = await Post.create([
     {body:
